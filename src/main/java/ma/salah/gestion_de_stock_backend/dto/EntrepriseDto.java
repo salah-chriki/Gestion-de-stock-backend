@@ -1,10 +1,11 @@
 package ma.salah.gestion_de_stock_backend.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.util.List;
 import lombok.Builder;
 import lombok.Data;
 import ma.salah.gestion_de_stock_backend.model.Entreprise;
+
+import java.util.List;
 
 @Data
 @Builder

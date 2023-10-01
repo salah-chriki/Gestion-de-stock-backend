@@ -1,19 +1,20 @@
 package ma.salah.gestion_de_stock_backend.dto.auth;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ma.salah.gestion_de_stock_backend.user.Role;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthenticationResponse {
+public class RegisterRequest {
 
-  @JsonProperty("access_token")
-  private String accessToken;
-  @JsonProperty("refresh_token")
-  private String refreshToken;
+  private String nom;
+  private String prenom;
+  private String email;
+  private String motDePasse;
+  private Role role;
 }

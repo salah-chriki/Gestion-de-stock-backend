@@ -7,17 +7,17 @@ import java.util.List;
 
 public interface UtilisateurService {
 
-  UtilisateurDto save(UtilisateurDto dto);
+    UtilisateurDto save(UtilisateurDto dto);
 
-  UtilisateurDto findById(Integer id);
+    UtilisateurDto findById(Integer id);
 
-  List<UtilisateurDto> findAll();
+    List<UtilisateurDto> findAll();
 
-  void delete(Integer id);
+    void delete(Integer id);
 
-  UtilisateurDto findByEmail(String email);
+    UtilisateurDto findByEmail(String email);
 
-  UtilisateurDto changerMotDePasse(ChangerMotDePasseUtilisateurDto dto);
+    UtilisateurDto changerMotDePasse(ChangerMotDePasseUtilisateurDto dto);
 
 
 }

@@ -1,10 +1,10 @@
 package ma.salah.gestion_de_stock_backend.validator;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import ma.salah.gestion_de_stock_backend.dto.UtilisateurDto;
 import org.springframework.util.StringUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UtilisateurValidator {
 
@@ -29,7 +29,7 @@ public class UtilisateurValidator {
     if (!StringUtils.hasLength(utilisateurDto.getEmail())) {
       errors.add("Veuillez renseigner l'email d'utilisateur");
     }
-    if (!StringUtils.hasLength(utilisateurDto.getMoteDePasse())) {
+    if (!StringUtils.hasLength(utilisateurDto.getMotDePasse())) {
       errors.add("Veuillez renseigner le mot de passe d'utilisateur");
     }
     if (utilisateurDto.getDateDeNaissance() == null) {
