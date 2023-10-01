@@ -1,21 +1,23 @@
 package ma.salah.gestion_de_stock_backend.model;
 
-import java.time.Instant;
-import java.util.List;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.time.Instant;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "ventes")
-public class Ventes extends AbstractEntity {
-
+public class Ventes  {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
+  Integer id;
   @Column(name = "code")
   private String code;
 

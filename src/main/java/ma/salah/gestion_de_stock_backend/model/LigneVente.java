@@ -1,19 +1,22 @@
 package ma.salah.gestion_de_stock_backend.model;
 
-import java.math.BigDecimal;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "lignevente")
-public class LigneVente extends AbstractEntity {
+public class LigneVente {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
+  Integer id;
 
   @ManyToOne
   @JoinColumn(name = "idvente")

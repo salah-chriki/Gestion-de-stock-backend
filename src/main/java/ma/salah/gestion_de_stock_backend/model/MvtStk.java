@@ -11,10 +11,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "mvtstk")
-public class MvtStk extends AbstractEntity {
+public class MvtStk  {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
+  Integer id;
 
   @Column(name = "datemvt")
   private Instant dateMvt;

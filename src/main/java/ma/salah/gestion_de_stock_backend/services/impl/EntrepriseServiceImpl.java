@@ -8,7 +8,6 @@ import ma.salah.gestion_de_stock_backend.exception.EntityNotFoundException;
 import ma.salah.gestion_de_stock_backend.exception.ErrorCodes;
 import ma.salah.gestion_de_stock_backend.exception.InvalidEntityException;
 import ma.salah.gestion_de_stock_backend.repository.EntrepriseRepository;
-import ma.salah.gestion_de_stock_backend.repository.RolesRepository;
 import ma.salah.gestion_de_stock_backend.services.EntrepriseService;
 import ma.salah.gestion_de_stock_backend.services.UtilisateurService;
 import ma.salah.gestion_de_stock_backend.validator.EntrepriseValidator;
@@ -26,14 +25,11 @@ public class EntrepriseServiceImpl implements EntrepriseService {
 
     private EntrepriseRepository entrepriseRepository;
     private UtilisateurService utilisateurService;
-    private RolesRepository rolesRepository;
 
     @Autowired
-    public EntrepriseServiceImpl(EntrepriseRepository entrepriseRepository, UtilisateurService utilisateurService,
-                                 RolesRepository rolesRepository) {
+    public EntrepriseServiceImpl(EntrepriseRepository entrepriseRepository, UtilisateurService utilisateurService                                 ) {
         this.entrepriseRepository = entrepriseRepository;
         this.utilisateurService = utilisateurService;
-        this.rolesRepository = rolesRepository;
     }
 
     @Override

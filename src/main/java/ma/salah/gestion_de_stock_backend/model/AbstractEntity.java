@@ -15,7 +15,8 @@ import java.time.Instant;
 public class AbstractEntity implements Serializable {
 
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @SequenceGenerator(name = "abstract_seq", allocationSize = 1)
   private Integer id;
 
 //  @CreatedDate

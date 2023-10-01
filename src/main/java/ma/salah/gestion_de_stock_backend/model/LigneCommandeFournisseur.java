@@ -10,10 +10,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "lignecommandefournisseur")
-public class LigneCommandeFournisseur extends AbstractEntity {
+public class LigneCommandeFournisseur  {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
+  Integer id;
 
   @ManyToOne
   @JoinColumn(name = "idarticle")

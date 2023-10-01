@@ -1,7 +1,10 @@
 package ma.salah.gestion_de_stock_backend.model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import ma.salah.gestion_de_stock_backend.model.auth.Token;
 import ma.salah.gestion_de_stock_backend.user.Role;
 import org.springframework.security.core.GrantedAuthority;
@@ -15,11 +18,14 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "utilisateur")
-public class Utilisateur extends AbstractEntity implements UserDetails {
+public class Utilisateur implements UserDetails {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    Integer id;
     @Column(name = "nom")
     private String nom;
 

@@ -1,20 +1,23 @@
 package ma.salah.gestion_de_stock_backend.model;
 
-import java.time.Instant;
-import java.util.List;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.time.Instant;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "commandeclient")
-public class CommandeClient extends AbstractEntity {
+public class CommandeClient  {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
+  Integer id;
 
   @Column(name = "code")
   private String code;
