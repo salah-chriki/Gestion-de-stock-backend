@@ -8,12 +8,15 @@ import ma.salah.gestion_de_stock_backend.config.JwtService;
 import ma.salah.gestion_de_stock_backend.dto.auth.AuthenticationRequest;
 import ma.salah.gestion_de_stock_backend.dto.auth.AuthenticationResponse;
 import ma.salah.gestion_de_stock_backend.dto.auth.RegisterRequest;
+import ma.salah.gestion_de_stock_backend.exception.ErrorCodes;
+import ma.salah.gestion_de_stock_backend.exception.InvalidOperationException;
 import ma.salah.gestion_de_stock_backend.model.Utilisateur;
 import ma.salah.gestion_de_stock_backend.model.auth.Token;
 import ma.salah.gestion_de_stock_backend.model.auth.TokenType;
 import ma.salah.gestion_de_stock_backend.repository.TokenRepository;
 import ma.salah.gestion_de_stock_backend.repository.UtilisateurRepository;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -30,7 +33,8 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
-    public AuthenticationResponse register(RegisterRequest request) {
+    public ResponseEntity<AuthenticationResponse> register(RegisterRequest request) {
+        if (repository.findByEmail(request.getEmail()).isPresent())throw new InvalidOperationException("already exist", ErrorCodes.UTILISATEUR_ALREADY_EXISTS);
         var user = Utilisateur.builder()
                 .nom(request.getNom())
                 .prenom(request.getPrenom())
@@ -42,10 +46,10 @@ public class AuthenticationService {
         var jwtToken = jwtService.generateToken(user);
         var refreshToken = jwtService.generateRefreshToken(user);
         saveUserToken(savedUser, jwtToken);
-        return AuthenticationResponse.builder()
+        return ResponseEntity.ok(AuthenticationResponse.builder()
                 .accessToken(jwtToken)
                 .refreshToken(refreshToken)
-                .build();
+                .build());
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {

@@ -18,16 +18,6 @@ public class GestionDeStockBackendApplication {
         SpringApplication.run(GestionDeStockBackendApplication.class, args);
     }
 
-//    @Bean
-//    CommandLineRunner commandLineRunner(UtilisateurRepository utilisateurRepository, PasswordEncoder passwordEncoder ) {
-//        return args -> {
-//
-//            Adresse adresse = new Adresse("dsds", "dsds", "tetouan", "daads", "morrocco");
-//            Entreprise entreprise = new Entreprise();
-////            Instant date=Instant.parse("1996-18-01");
-//            Utilisateur utilisateur = new Utilisateur("salahchriki1@gmail.com", passwordEncoder.encode("password"), adresse, "dffdfs", Role.USER);
-//            utilisateurRepository.save(utilisateur);
-//        };
-//    }
+
 
 }
