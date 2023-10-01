@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-@CrossOrigin(origins = "https://neighborly-eggnog-production.up.railway.app/")
+@CrossOrigin(origins = "https://neighborly-eggnog-production.up.railway.app")
 @RestController
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
