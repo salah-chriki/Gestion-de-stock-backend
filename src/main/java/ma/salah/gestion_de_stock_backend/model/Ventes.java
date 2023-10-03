@@ -13,11 +13,8 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "ventes")
-public class Ventes  {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
-  Integer id;
+public class Ventes  extends AbstractEntity{
+
   @Column(name = "code")
   private String code;
 

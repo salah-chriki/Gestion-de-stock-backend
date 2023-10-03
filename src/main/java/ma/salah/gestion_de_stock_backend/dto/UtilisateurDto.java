@@ -3,7 +3,7 @@ package ma.salah.gestion_de_stock_backend.dto;
 import lombok.Builder;
 import lombok.Data;
 import ma.salah.gestion_de_stock_backend.model.Utilisateur;
-import ma.salah.gestion_de_stock_backend.user.Role;
+import ma.salah.gestion_de_stock_backend.role.Role;
 
 import java.time.Instant;
 

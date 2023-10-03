@@ -12,11 +12,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Entity
 @Table(name = "lignecommandeclient")
-public class LigneCommandeClient  {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
-  Integer id;
+public class LigneCommandeClient extends AbstractEntity {
 
   @ManyToOne
   @JoinColumn(name = "idarticle")

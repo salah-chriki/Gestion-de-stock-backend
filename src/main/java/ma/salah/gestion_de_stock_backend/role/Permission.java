@@ -1,4 +1,4 @@
-package ma.salah.gestion_de_stock_backend.user;
+package ma.salah.gestion_de_stock_backend.role;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

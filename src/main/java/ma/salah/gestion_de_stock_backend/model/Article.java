@@ -14,11 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "article")
-public class Article {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
-  Integer id;
+public class Article extends AbstractEntity {
 
   @Column(name = "codearticle")
   private String codeArticle;

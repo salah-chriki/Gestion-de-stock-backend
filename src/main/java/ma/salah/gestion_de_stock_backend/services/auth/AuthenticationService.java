@@ -34,7 +34,7 @@ public class AuthenticationService {
     private final AuthenticationManager authenticationManager;
 
     public ResponseEntity<AuthenticationResponse> register(RegisterRequest request) {
-        if (repository.findByEmail(request.getEmail()).isPresent())throw new InvalidOperationException("already exist", ErrorCodes.UTILISATEUR_ALREADY_EXISTS);
+        if (repository.findByEmail(request.getEmail()).isPresent())throw new InvalidOperationException("utilisateur exist deja", ErrorCodes.UTILISATEUR_ALREADY_EXISTS);
         var user = Utilisateur.builder()
                 .nom(request.getNom())
                 .prenom(request.getPrenom())

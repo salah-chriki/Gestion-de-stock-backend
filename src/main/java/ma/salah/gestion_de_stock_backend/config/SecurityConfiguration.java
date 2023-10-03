@@ -13,12 +13,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import static ma.salah.gestion_de_stock_backend.user.Permission.*;
-import static ma.salah.gestion_de_stock_backend.user.Role.ADMIN;
-import static ma.salah.gestion_de_stock_backend.user.Role.USER;
+import static ma.salah.gestion_de_stock_backend.role.Permission.*;
+import static ma.salah.gestion_de_stock_backend.role.Role.ADMIN;
+import static ma.salah.gestion_de_stock_backend.role.Role.USER;
 import static org.springframework.http.HttpMethod.*;
 
 @Configuration

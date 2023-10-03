@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ma.salah.gestion_de_stock_backend.model.AbstractEntity;
 import ma.salah.gestion_de_stock_backend.model.Utilisateur;
 
 @Data
@@ -12,12 +13,7 @@ import ma.salah.gestion_de_stock_backend.model.Utilisateur;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Token {
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
-  public Integer id;
+public class Token extends AbstractEntity {
 
   @Column(unique = true)
   public String token;

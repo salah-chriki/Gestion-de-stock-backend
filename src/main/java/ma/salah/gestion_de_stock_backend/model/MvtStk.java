@@ -13,12 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "mvtstk")
-public class MvtStk  {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
-  Integer id;
-
+public class MvtStk  extends AbstractEntity{
   @Column(name = "datemvt")
   private Instant dateMvt;
 

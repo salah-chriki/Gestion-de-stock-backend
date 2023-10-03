@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ma.salah.gestion_de_stock_backend.model.auth.Token;
-import ma.salah.gestion_de_stock_backend.user.Role;
+import ma.salah.gestion_de_stock_backend.role.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -20,12 +20,8 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "utilisateur")
-public class Utilisateur implements UserDetails {
+public class Utilisateur extends AbstractEntity implements UserDetails{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    Integer id;
     @Column(name = "nom")
     private String nom;
 

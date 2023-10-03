@@ -12,12 +12,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Entity
 @Table(name = "lignevente")
-public class LigneVente {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
-  Integer id;
-
+public class LigneVente extends AbstractEntity{
   @ManyToOne
   @JoinColumn(name = "idvente")
   private Ventes vente;

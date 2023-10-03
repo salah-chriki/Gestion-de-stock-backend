@@ -12,12 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "entreprise")
-public class Entreprise  {
+public class Entreprise  extends AbstractEntity{
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
-  Integer id;
   @Column(name = "nom")
   private String nom;
 

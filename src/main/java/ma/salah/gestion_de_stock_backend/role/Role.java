@@ -1,4 +1,4 @@
-package ma.salah.gestion_de_stock_backend.user;
+package ma.salah.gestion_de_stock_backend.role;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static ma.salah.gestion_de_stock_backend.user.Permission.*;
+import static ma.salah.gestion_de_stock_backend.role.Permission.*;
 
 @Getter
 @RequiredArgsConstructor

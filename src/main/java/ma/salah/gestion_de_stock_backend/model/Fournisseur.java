@@ -12,11 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "fournisseur")
-public class Fournisseur  {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
-  Integer id;
+public class Fournisseur  extends AbstractEntity{
 
   @Column(name = "nom")
   private String nom;

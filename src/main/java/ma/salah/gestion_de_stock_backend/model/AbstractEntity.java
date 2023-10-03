@@ -15,13 +15,13 @@ import java.time.Instant;
 public class AbstractEntity implements Serializable {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  @SequenceGenerator(name = "abstract_seq", allocationSize = 1)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
   private Integer id;
 
-//  @CreatedDate
-//  @Column(name = "creationDate", updatable = false)
-//  private Instant creationDate;
+  @CreatedDate
+  @Column(name = "creationDate",nullable = false, updatable = false)
+  private Instant creationDate;
 
   @LastModifiedDate
   @Column(name = "lastModifiedDate")

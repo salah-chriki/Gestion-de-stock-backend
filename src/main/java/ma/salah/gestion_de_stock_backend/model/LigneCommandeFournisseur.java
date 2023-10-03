@@ -12,12 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "lignecommandefournisseur")
-public class LigneCommandeFournisseur  {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
-  Integer id;
-
+public class LigneCommandeFournisseur  extends AbstractEntity{
   @ManyToOne
   @JoinColumn(name = "idarticle")
   private Article article;

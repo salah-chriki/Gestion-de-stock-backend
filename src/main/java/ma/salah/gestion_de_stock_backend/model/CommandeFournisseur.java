@@ -14,11 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "commandefournisseur")
-public class CommandeFournisseur {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
-  Integer id;
+public class CommandeFournisseur extends AbstractEntity{
 
   @Column(name = "code")
   private String code;
